@@ -35,7 +35,7 @@
 
 | Params | Description | Type | Default |
 | :------: | :-----------: | :----: | :-------: |
-| timestamp | new Date( )/new Date( ).getTime( ) | date object / number | new Date( ) |
+| timestamp | new Date( ) / new Date( ).getTime( ) | date object / number | new Date( ) |
 | hms | whether to return hours,minutes and seconds | boolean | false |
 | connector | connector between year,month and date | string | '-' |
 
