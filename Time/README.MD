@@ -1,8 +1,8 @@
-# time stamp to YMD 
-## code
+# Time stamp to YMD 
+> Code
 ``` javascript
   function timeStampToYMD( timeStamp = new Date().getTime(), hms = false, connector = '-' ) {
-    let dateObj = new Date( timeStamp )
+    let dateObj = new Date(timeStamp)
     let year = dateObj.getFullYear(),
         month = dateObj.getMonth() + 1,
         date = dateObj.getDate(),
@@ -23,29 +23,30 @@
   }
 ```
 
-## example
+> Example
 ``` javascript
   let dateObject = new Date() // Mon May 13 2019 15:57:28 GMT+0800 (中国标准时间)
   let timeStamp = new Date().getTime() // 1557734177210
-  timeStampToYMD(dateObject) // "2019-05-13"
-  timeStampToYMD(timeStamp) // "2019-05-13"
+  timeStampToYMD( dateObject ) // "2019-05-13"
+  timeStampToYMD( timeStamp ) // "2019-05-13"
 ```
 
-## params
+> Params
 
-| params | description | type | accepted |default |
-| ------ | ----------- | ---- | ------- | ------- |
-| timestamp | pls provide a time stamp or date object | date object/time stamp number | new Date()/new Date().getTime() | new Date() |
-| connector | connector between year,month and date | string | any string | '-' |
+| Params | Description | Type | Default |
+| :------: | :-----------: | :----: | :-------: |
+| timestamp | new Date( )/new Date( ).getTime( ) | date object / number | new Date( ) |
+| hms | whether to return hours,minutes and seconds | boolean | false |
+| connector | connector between year,month and date | string | '-' |
 
 
 # get time range by number
-## code
+> Code
 ``` javascript
-  function getDateRange( num ) {
+  function getDateRange( num  = 0 ) {
     let timeStamp, start_time, end_time
-    if (num >= 0) {
-      timeStamp = new Date(new Date().getTime() - -num * 1000 * 60 * 60 * 24)
+    if ( num >= 0 ) {
+      timeStamp = new Date( new Date().getTime() - -num * 1000 * 60 * 60 * 24 )
       start_time = timeStampToYMD(new Date().getTime())
       end_time = timeStampToYMD(timeStamp)
       return [start_time, end_time]
@@ -58,7 +59,7 @@
   }
 ```
 
-## example
+> Example
 ``` javascript
   getDateRange(0) // ["2019-05-13", "2019-05-13"]
   getDateRange(1) // ["2019-05-13", "2019-05-14"]
@@ -67,8 +68,8 @@
   getDateRange(-365) // ["2018-05-13", "2019-05-13"]
 ```
 
-## params
+> Params
 
-| params | description | type | accepted |default |
-| ------ | ----------- | ---- | ------- | ------- |
-| num | how many days you want | number | number | 0 |
+| Params | Description | Type | Default |
+| :------: | :-----------: | :----: | :-------: |
+| num | how many days you want | number | 0 |
