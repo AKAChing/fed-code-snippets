@@ -2,13 +2,13 @@
 > Code
 ``` javascript
   function copyText( content = '', successInfo = 'copy success') {
-    // it works by simulate the input element
+    // it works by simulating the input element
     let oInput = document.createElement('input')
     oInput.id = 'copyInput'
     oInput.value = content
     document.body.appendChild(oInput)
     oInput.select()
-    document.execCommand("Copy")
+    document.execCommand('Copy')
     oInput.style.display = 'none'
     alert(successInfo)
     // remove the element after copied
