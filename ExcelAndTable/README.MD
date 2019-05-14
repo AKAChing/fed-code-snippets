@@ -37,12 +37,14 @@ Example excel file
 
 you can use the upload components (like: element-upload or ...) to get the raw file object
 ``` javascript
-  excelToJson(rawFile) // [{ Name: 'Jack', Age: '18', Gender: 'male' }, { Name: 'Rose', Age: '18',  Gender: 'female' }]
+  excelToJson(rawFile)
+  // [{ Name: 'Jack', Age: '18', Gender: 'male' }, { Name: 'Rose', Age: '18',  Gender: 'female' }]
 ```
 or you can pass the keysOption to customize the key of each object in returns arry
 ``` javascript
   let keysOption = [ 'name', 'age', 'gender' ]
-  excelToJson(rawFile, keysOption) // [{ name: 'Jack', age: '18', gender: 'male' }, { name: 'Rose', age: '18',  gender: 'female' }]
+  excelToJson(rawFile, keysOption)
+  // [{ name: 'Jack', age: '18', gender: 'male' }, { name: 'Rose', age: '18',  gender: 'female' }]
 ```
 usually a excel file will have mutiple sheets, just do it as before because no matter how many sheets it has, it will merge each sheet to an array
 
