@@ -10,15 +10,15 @@
     reader.onload = function (e) {
       let data = e.target.result
       let workbook = XLSX.read(data, { type: 'binary' }) 
-      let unitSheet = []  // a one dimensional array, only includes the data in someome sheet
-      let totalSheet = [] // a two dimensional array, includes all the data in the all sheets
-      let arrySheet = []  // a one dimensional array, includes all the data in the all sheets
-      Object.keys(workbook.Sheets).forEach(key => {//提取每个sheet表中的每条数据并保存备用
+      let unitSheet = []  // a one dimensional array, only includes the data in one sheet
+      let totalSheet = [] // a two dimensional array, includes the data in all sheets
+      let arrySheet = []  // a one dimensional array, includes the data in all sheets
+      Object.keys(workbook.Sheets).forEach(key => {
         unitSheet = XLSX.utils.sheet_to_json(workbook.Sheets[key], { header: keysOption })
-        keysOption && unitSheet.splice(0,1) // splice the first item bcz we don't need it, it just label, you can redefine it by keysOption
+        keysOption && unitSheet.splice(0,1) // splice the first item bcz we don't need it, it's a label, you can redefine it by keysOption
         totalSheet.push(unitSheet)
       })
-      totalSheet.map(arr1 => arr1.map(arr2 => arrySheet.push(arr2))) // generate a one dimensional arry for back-end to receives
+      totalSheet.map(arr1 => arr1.map(arr2 => arrySheet.push(arr2))) // generate a one dimensional array for back-end
       console.log(arrySheet)
       return arrySheet
     }
