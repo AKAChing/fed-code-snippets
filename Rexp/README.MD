@@ -40,3 +40,27 @@
     return paramsObj
   }
 ```
+
+> Lowercase letter
+``` javascript
+  function lowercaseLetter(str){
+    const reg = /^[a-z]+$/
+    return reg.test(str)
+  }
+```
+
+> Uppercase letter
+``` javascript
+  function uppercaseLetter(str){
+    const reg = /^[A-Z]+$/
+    return reg.test(str)
+  }
+```
+
+> Uppercase and lowercase letter
+``` javascript
+  function letter(str){
+    const reg = /^[A-Z]+$/
+    return reg.test(str)
+  }
+```
