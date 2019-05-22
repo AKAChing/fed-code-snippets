@@ -40,7 +40,7 @@
 | connector | connector between year,month and date | string | '-' |
 
 
-# get time range by number
+# get date range by number
 > Code
 ``` javascript
   function getDateRange( num  = 0 ) {
