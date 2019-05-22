@@ -24,33 +24,33 @@ export function getUrlQueryParams() {
   return paramsObj
 }
 
-export function lowercaseLetter(str){
+export function lowercaseLetter(str) {
   const reg = /^[a-z]+$/
   return reg.test(str)
 }
 
-export function uppercaseLetter(str){
+export function uppercaseLetter(str) {
   const reg = /^[A-Z]+$/
   return reg.test(str)
 }
 
-export function letter(str){
+export function letter(str) {
   const reg = /^[A-Z]+$/
   return reg.test(str)
 }
 
-export function isIncludesWhiteSpace(str){
-  if(str) return str.includes(' ')
+export function isIncludesWhiteSpace(str) {
+  if (str) return str.includes(' ')
 }
 
-export function isIncludesDot(str){
-  if(str) return str.includes('.')
+export function isIncludesDot(str) {
+  if (str) return str.includes('.')
 }
 
-export function isLongerThan(str,length){
-  if(str) return str.length > length
+export function isLongerThan(str, length) {
+  if (str) return str.length > length
 }
 
-export function isShorterThan(str,length){
-  if(str) return str.length < length
+export function isShorterThan(str, length) {
+  if (str) return str.length < length
 }
