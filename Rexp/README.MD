@@ -43,7 +43,7 @@
 
 > lowercase letter
 ``` javascript
-  function lowercaseLetter(str){
+  function isLowercaseLetter(str){
     const reg = /^[a-z]+$/
     return reg.test(str)
   }
@@ -51,7 +51,7 @@
 
 > uppercase letter
 ``` javascript
-  function uppercaseLetter(str){
+  function isUppercaseLetter(str){
     const reg = /^[A-Z]+$/
     return reg.test(str)
   }
@@ -59,7 +59,7 @@
 
 > uppercase and lowercase letter
 ``` javascript
-  function letter(str){
+  function isLetter(str){
     const reg = /^[A-Z]+$/
     return reg.test(str)
   }
@@ -91,4 +91,12 @@
   function isShorterThan(str,length){
     if(str) return str.length < length
   }
+```
+
+> cash formatter
+``` javascript
+  function cashFormatter(str){
+    if (str) return String(str).replace(/\B(?=(\d{3})+(?!\d))/g, ',')
+  }
+  cashFormatter(12312313) // '12,312,313'
 ```

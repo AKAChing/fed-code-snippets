@@ -24,17 +24,17 @@ export function getUrlQueryParams() {
   return paramsObj
 }
 
-export function lowercaseLetter(str) {
+export function isLowercaseLetter(str) {
   const reg = /^[a-z]+$/
   return reg.test(str)
 }
 
-export function uppercaseLetter(str) {
+export function isUppercaseLetter(str) {
   const reg = /^[A-Z]+$/
   return reg.test(str)
 }
 
-export function letter(str) {
+export function isLetter(str) {
   const reg = /^[A-Z]+$/
   return reg.test(str)
 }
@@ -53,4 +53,8 @@ export function isLongerThan(str, length) {
 
 export function isShorterThan(str, length) {
   if (str) return str.length < length
+}
+
+export function cashFormatter(str){
+  if (str) return String(str).replace(/\B(?=(\d{3})+(?!\d))/g, ',')
 }
