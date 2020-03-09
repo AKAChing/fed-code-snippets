@@ -83,3 +83,29 @@
   animation: blink 1s ease-in infinite;
   transition: all .6s;
 }
+
+// webkit内核浏览器滚动条样式
+@mixin webkitBrowserScrollBarStyle() {
+  body::-webkit-scrollbar{
+    width: 6px;
+    background-color: #ccc;
+  }
+  body::-webkit-scrollbar-track{
+    background-color: #ddd;
+  }
+  body::-webkit-scrollbar-thumb, .horizon-scrollbar::-webkit-scrollbar-thumb{
+    background-color: #666;
+    transition: all .2s;
+    &:hover{
+      background-color: #999;
+    }
+  }
+}
+
+// 浏览器文字选中样式
+@mixin browserTextSelectedStyle() {
+  ::selection {
+    background-color: #333;
+    color: #fff;
+  }
+}
