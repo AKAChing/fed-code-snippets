@@ -4,3 +4,9 @@ export function getQueryParams(name) {
   if (r != null) return unescape(r[2]);
   return ''
 }
+
+export function getQueryParamsObj() {
+  let paramsObj = {}
+  location.search.replace(/([^?&=]+)=([^&]+)/g, (_, k, v) => paramsObj[k] = v)
+  return paramsObj
+}
