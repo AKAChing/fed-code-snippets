@@ -86,3 +86,35 @@ export default Vue => {
     }
   })
 }
+
+// style
+// .lazyload-container{
+//   display: inline-block;
+//   position: relative;
+//   width: 100%;
+//   img.lazyload-img{
+//     width: 100%;
+//     height: 100%;
+//     object-fit: cover;
+//     position: absolute;
+//     top: 0;
+//     right: 0;
+//     bottom: 0;
+//     left: 0;
+//   }
+//   section.lazyload-bg{
+//     width: 100%;
+//     height: 100%;
+//     position: absolute;
+//     top: 0;
+//     right: 0;
+//     bottom: 0;
+//     left: 0;
+//     opacity: 1;
+//     pointer-events: none;
+//     @include backgroundGradientAnimation;
+//   }
+//   section.loaded{
+//     opacity: 0;
+//   }
+// }
