@@ -1,5 +1,5 @@
-import xlsx from 'xlsx'
-import fileSaver from 'file-saver'
+import XLSX from 'xlsx'
+import FileSaver from 'file-saver'
 export function excelToJson(rawFile, keysOption) {
   let reader = new FileReader()
   reader.onload = function (e) {
