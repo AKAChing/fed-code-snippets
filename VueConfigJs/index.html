@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>XXX</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="viewport-fit=cover,width=device-width,height=device-height,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no">
+    
+    <!-- IOS添加到主屏设置 -->
+    <meta name="apple-mobile-web-app-title" content="title">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="default">
+    <link rel="apple-touch-icon-precomposed" href="./logo.png" />
+
+    <!-- 普通meta -->
+    <meta name="robots" content="index,follow">
+    <meta name="keywords" content="keywords">
+    <meta name="description" content="descriptions">
+    <meta name="author" content="akaching">
+    <meta name="referrer" content="no-referrer-when-downgrade">
+    <meta name="renderer" content="webkit">
+    <meta name="copyright" content="© Copyright xxx All Rights Reserved">
+    
+    <!-- icon -->
+    <link rel="shortcut icon" href="./favicon.ico">
+    <link rel="icon" href="./favicon.ico">
+    
+    <!-- twitter 分享卡片meta -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="title" />
+    <meta name="twitter:description" content="descriptions" />
+    <meta name="twitter:image" content="https://xxx.jpg" />
+    <meta name="twitter:site" content="@mytwitter" />
+    <meta name="twitter:site:id" content="@mytwitter" />
+    
+    <!-- 通用OG协议 分享卡片meta -->
+    <meta property="og:title" content="title">
+    <meta property="og:description" content="descriptions">
+    <meta property="og:url" content="https://xxx.io/">
+    <meta property="og:image" content="https://xxx.jpg">
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="sitename">
+
+    <% for (var i in htmlWebpackPlugin.options.cdn && htmlWebpackPlugin.options.cdn.css) { %>
+      <link href="<%= htmlWebpackPlugin.options.cdn.css[i] %>" rel="stylesheet">
+    <% } %>
+
+    <% for (var i in htmlWebpackPlugin.options.cdn && htmlWebpackPlugin.options.cdn.js) { %>
+      <link href="<%= htmlWebpackPlugin.options.cdn.js[i] %>" rel="preload" as="script">
+    <% } %>
+    
+  </head>
+  <body>
+    <noscript>
+      <strong>We're sorry but our website doesn't work properly without JavaScript enabled. Please enable it to continue.</strong>
+    </noscript>
+    <div id="app"></div>
+
+    <% for (var i in htmlWebpackPlugin.options.cdn && htmlWebpackPlugin.options.cdn.js) { %>
+      <script src="<%= htmlWebpackPlugin.options.cdn.js[i] %>"></script>
+    <% } %>
+    
+  </body>
+</html>
