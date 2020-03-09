@@ -1,2 +1,2 @@
-# fed-code-snippets
-some code snippets for fed
+# code-snippets
+code snippets
