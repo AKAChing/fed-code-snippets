@@ -1,23 +1,23 @@
 import XLSX from 'xlsx'
 import FileSaver from 'file-saver'
-export function excelToJson(rawFile, keysOption) {
-  let reader = new FileReader()
-  reader.onload = function (e) {
-    let data = e.target.result
-    let workbook = XLSX.read(data, { type: 'binary' }) 
-    let unitSheet = []  // a one dimensional array, only includes the data in one sheet
-    let totalSheet = [] // a two dimensional array, includes the data in all sheets
-    let arrySheet = []  // a one dimensional array, includes the data in all sheets
-    Object.keys(workbook.Sheets).forEach(key => {
-      unitSheet = XLSX.utils.sheet_to_json(workbook.Sheets[key], { header: keysOption })
-      keysOption && unitSheet.splice(0,1) // splice the first item bcz we don't need it, it's a label, you can redefine it by keysOption
-      totalSheet.push(unitSheet)
+export function excelToJson(rawFile) {
+  let reader = new FileReader();
+  let jsonArr = []
+  reader.onload = function(e) {
+    let data = e.target.result;
+    let workbook = XLSX.read(data, {
+      type: 'binary'
+    });
+    let sheets = workbook.Sheets
+    Object.keys(sheets).forEach(key => {
+      let unitJson = XLSX.utils.sheet_to_json(sheets[key])
+      unitJson.forEach(item => {
+        jsonArr.push(item)
+      })
     })
-    totalSheet.map(arr1 => arr1.map(arr2 => arrySheet.push(arr2))) // generate a one dimensional array for back-end
-    console.log(arrySheet)
-    return arrySheet
-  }
-  reader.readAsBinaryString(rawFile)
+  };
+  reader.readAsBinaryString(rawFile);
+  return jsonArr
 }
 
 export function tableToExcel(table, name = 'table') {
